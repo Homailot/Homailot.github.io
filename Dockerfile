@@ -1,4 +1,4 @@
-FROM node:22-bookworm AS development
+FROM mcr.microsoft.com/devcontainers/typescript-node:22 AS development
 
 WORKDIR /code
 COPY ./package.json /code/package.json
