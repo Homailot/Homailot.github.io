@@ -1,7 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+import defaultTheme from "tailwindcss/defaultTheme";
+
 export const content = ["./src/**/*.{js,jsx,ts,tsx}"];
 export const theme = {
-  extend: {},
+  extend: {
+    fontFamily: {
+      'display': ['Playfair Display', ...defaultTheme.fontFamily.serif],
+    },
+  },
   colors: {
     "satin-linen": {
       50: "#f9f7f3",
@@ -56,5 +62,6 @@ export const theme = {
       950: "#313335",
     },
   },
+
 };
 export const plugins = [];
