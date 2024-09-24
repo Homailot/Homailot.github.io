@@ -10,7 +10,7 @@ COPY . /code
 ENV CI=true
 ENV PORT=3000
 
-CMD [ "yarn", "start" ]
+CMD [ "yarn", "dev" ]
 
 FROM development AS dev-envs
 RUN <<EOF
@@ -25,4 +25,4 @@ usermod -aG docker vscode
 EOF
 # install Docker tools (cli, buildx, compose)
 COPY --from=gloursdocker/docker / /
-CMD [ "yarn", "start" ]
+CMD [ "yarn", "dev" ]

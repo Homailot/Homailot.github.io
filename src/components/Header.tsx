@@ -1,5 +1,3 @@
-import React from "react";
-
 function Header() {
   return (
     <header className="bg-satin-linen-200 h-20 flex flex-row items-center w-screen absolute">
