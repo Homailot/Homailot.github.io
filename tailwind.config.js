@@ -5,7 +5,7 @@ export const content = ["./src/**/*.{js,jsx,ts,tsx}"];
 export const theme = {
   extend: {
     fontFamily: {
-      'display': ['Playfair Display', ...defaultTheme.fontFamily.serif],
+      display: ["Playfair Display", ...defaultTheme.fontFamily.serif],
     },
   },
   colors: {
@@ -62,6 +62,5 @@ export const theme = {
       950: "#313335",
     },
   },
-
 };
 export const plugins = [];

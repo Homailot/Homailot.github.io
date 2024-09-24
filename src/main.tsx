@@ -9,17 +9,17 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: [{
-      index: true,
-      element: <HomePage />,
-    }]
-  }
-])
-
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+    ],
+  },
+]);
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>,
 );
-
