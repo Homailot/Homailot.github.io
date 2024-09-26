@@ -6,6 +6,7 @@ export const theme = {
   extend: {
     fontFamily: {
       display: ["Playfair Display", ...defaultTheme.fontFamily.serif],
+      body: ["Merriweather", ...defaultTheme.fontFamily.serif],
     },
   },
   colors: {
