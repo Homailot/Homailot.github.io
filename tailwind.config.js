@@ -32,6 +32,16 @@ export const theme = {
           opacity: 1,
         },
       },
+      "slide-in-bottom": {
+        "0%": {
+          transform: "translateY(100%)",
+          opacity: 0,
+        },
+        "100%": {
+          transform: "translateY(0)",
+          opacity: 1,
+        },
+      },
       "card-drop-1": {
         "0%": {
           opacity: 0,
@@ -42,7 +52,7 @@ export const theme = {
           transform: "scale(1) rotate(-5deg)",
         },
       },
-      "card-drop-2": {
+      "card-drop-2-lg": {
         "0%": {
           opacity: 0,
           transform: "scale(2)",
@@ -50,6 +60,16 @@ export const theme = {
         "100%": {
           opacity: 1,
           transform: "scale(1) rotate(6deg)",
+        },
+      },
+      "card-drop-2": {
+        "0%": {
+          opacity: 0,
+          transform: "scale(2)",
+        },
+        "100%": {
+          opacity: 1,
+          transform: "scale(1) rotate(2.33deg)",
         },
       },
       "card-drop-3": {
@@ -66,6 +86,7 @@ export const theme = {
     animation: {
       "slide-in-left": "slide-in-left 1.2s ease-in-out",
       "slide-in-top": "slide-in-top 1.2s ease-in-out", 
+      "slide-in-bottom": "slide-in-bottom 1.2s ease-in-out",
     },
     colors: {
       "satin-linen": {
