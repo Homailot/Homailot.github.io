@@ -1,4 +1,5 @@
 import { Trans, useTranslation } from "react-i18next";
+import PhotoCard from "../components/PhotoCard";
 
 function HomePage() {
   const { t } = useTranslation();
@@ -20,6 +21,7 @@ function HomePage() {
         </p>
       </article>
     </div>
+    <PhotoCard className="rotate-[-5deg]" photo="cards/card_01.jpg" title="A photo of me" />
   </div>;
 }
 
