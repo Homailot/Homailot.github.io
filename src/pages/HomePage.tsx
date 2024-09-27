@@ -21,7 +21,11 @@ function HomePage() {
         </p>
       </article>
     </div>
-    <PhotoCard className="rotate-[-5deg]" photo="cards/card_01.jpg" title="A photo of me" />
+    <div className="relative w-[30rem]">
+      <PhotoCard className="absolute rotate-[-5deg] top-[-20rem] left-[-6rem]" photo="cards/card_01.jpg" title="A photo of me" />
+      <PhotoCard className="absolute rotate-[6deg] top-[-15rem] left-[10rem]" photo="cards/card_02.jpg" title="A photo of me" />
+      <PhotoCard className="absolute rotate-[7.33deg] top-[-3rem] left-[-6rem]" photo="cards/card_03.jpg" title="A photo of me" />
+    </div>
   </div>;
 }
 
