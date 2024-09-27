@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --bg-linen-100: theme("colors.satin-linen.100");
+  --bg-linen-100-0: theme("colors.satin-linen.100 / 0%");
 }
 
 body {
@@ -16,4 +18,14 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.bg-gradient-horizontal-edges {
+  background-image: linear-gradient(
+    to right,
+    var(--bg-linen-100-0) 0%,
+    var(--bg-linen-100) 8%,
+    var(--bg-linen-100) 92%,
+    var(--bg-linen-100-0) 100%
+  );
 }
