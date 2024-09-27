@@ -11,6 +11,62 @@ export const theme = {
     boxShadow: {
       DEFAULT: "0px 6px 24px 0px rgb(0 0 0 / 0.05)",
     },
+    keyframes: {
+      "slide-in-left": {
+        "0%": {
+          transform: "translateX(-100%)",
+          opacity: 0,
+        },
+        "100%": {
+          transform: "translateX(0)",
+          opacity: 1,
+        },
+      },
+      "slide-in-top": {
+        "0%": {
+          transform: "translateY(-100%)",
+          opacity: 0,
+        },
+        "100%": {
+          transform: "translateY(0)",
+          opacity: 1,
+        },
+      },
+      "card-drop-1": {
+        "0%": {
+          opacity: 0,
+          transform: "scale(2)",
+        },
+        "100%": {
+          opacity: 1,
+          transform: "scale(1) rotate(-5deg)",
+        },
+      },
+      "card-drop-2": {
+        "0%": {
+          opacity: 0,
+          transform: "scale(2)",
+        },
+        "100%": {
+          opacity: 1,
+          transform: "scale(1) rotate(6deg)",
+        },
+      },
+      "card-drop-3": {
+        "0%": {
+          opacity: 0,
+          transform: "scale(2)",
+        },
+        "100%": {
+          opacity: 1,
+          transform: "scale(1) rotate(7.33deg)",
+        },
+      }
+   },
+    animation: {
+      "slide-in-left": "slide-in-left 1.2s ease-in-out",
+      "slide-in-top": "slide-in-top 1.2s ease-in-out", 
+    },
     colors: {
       "satin-linen": {
         50: "#f9f7f3",
