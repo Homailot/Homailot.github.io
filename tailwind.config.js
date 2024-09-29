@@ -10,6 +10,7 @@ export const theme = {
     },
     boxShadow: {
       DEFAULT: "0px 6px 24px 0px rgb(0 0 0 / 0.05)",
+      "outline": "0px 6px 24px 0px rgb(0 0 0 / 0.05), 0px 0px 0px 1px rgb(0 0 0 / 0.08) " 
     },
     keyframes: {
       "slide-in-left": {
@@ -81,11 +82,11 @@ export const theme = {
           opacity: 1,
           transform: "scale(1) rotate(7.33deg)",
         },
-      }
-   },
+      },
+    },
     animation: {
       "slide-in-left": "slide-in-left 1.2s ease-in-out",
-      "slide-in-top": "slide-in-top 1.2s ease-in-out", 
+      "slide-in-top": "slide-in-top 1.2s ease-in-out",
       "slide-in-bottom": "slide-in-bottom 1.2s ease-in-out",
     },
     colors: {
@@ -141,18 +142,18 @@ export const theme = {
         900: "#54575b",
         950: "#313335",
       },
-      'crown-of-thorns': {
-        '50': '#fdf3f3',
-        '100': '#fbe5e5',
-        '200': '#f8d0d1',
-        '300': '#f1b0b1',
-        '400': '#e78283',
-        '500': '#da595b',
-        '600': '#c63c3e',
-        '700': '#a62f31',
-        '800': '#8a2a2b',
-        '900': '#73292a',
-        '950': '#3e1112',
+      "crown-of-thorns": {
+        50: "#fdf3f3",
+        100: "#fbe5e5",
+        200: "#f8d0d1",
+        300: "#f1b0b1",
+        400: "#e78283",
+        500: "#da595b",
+        600: "#c63c3e",
+        700: "#a62f31",
+        800: "#8a2a2b",
+        900: "#73292a",
+        950: "#3e1112",
       },
     },
   },

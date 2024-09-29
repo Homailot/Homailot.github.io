@@ -1,8 +1,8 @@
 {
-    "about": {
-        "greeting": "Hello!",
-        "part_1": "My name is Nuno Alves, I’m a Software Engineer from Portugal with an interest in <strong>Web & Mobile Design and Development</strong>, <strong>Computer Graphics</strong>, <strong>Game Development</strong>, and <strong>Computer Networking.</strong>",
-        "part_2": "In my free time, I like to listen and discover music, play video games, read manga, watch movies, and play the drums.",
-        "part_3": "Currently, I am studying Japanese because of my love of Japanese video games and as a challenge."
-    } 
+  "about": {
+    "greeting": "Hello!",
+    "part_1": "My name is Nuno Alves, I’m a Software Engineer from Portugal with an interest in <strong>Web & Mobile Design and Development</strong>, <strong>Computer Graphics</strong>, <strong>Game Development</strong>, and <strong>Computer Networking.</strong>",
+    "part_2": "In my free time, I like to listen and discover music, play video games, read manga, watch movies, and play the drums.",
+    "part_3": "Currently, I am studying Japanese because of my love of Japanese video games and as a challenge."
+  }
 }

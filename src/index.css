@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --bg-linen-100: theme("colors.satin-linen.100");
   --bg-linen-100-0: theme("colors.satin-linen.100 / 0%");
