@@ -6,6 +6,7 @@
 :root {
   --bg-linen-100: theme("colors.satin-linen.100");
   --bg-linen-100-0: theme("colors.satin-linen.100 / 0%");
+  --md: theme("screens.md");
 }
 
 body {
@@ -20,12 +21,14 @@ code {
     monospace;
 }
 
-.bg-gradient-horizontal-edges {
-  background-image: linear-gradient(
-    to right,
-    var(--bg-linen-100-0) 0%,
-    var(--bg-linen-100) 8%,
-    var(--bg-linen-100) 92%,
-    var(--bg-linen-100-0) 100%
-  );
+@media screen and (min-width: 768px) {
+  .md\:bg-gradient-horizontal-edges {
+    background-image: linear-gradient(
+      to right,
+      var(--bg-linen-100-0) 0%,
+      var(--bg-linen-100) 8%,
+      var(--bg-linen-100) 92%,
+      var(--bg-linen-100-0) 100%
+    );
+  }
 }
