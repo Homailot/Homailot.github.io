@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import LanguageSelect from "./LanguageSelect";
 
 function Header() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const { i18n } = useTranslation();
+
   const handleScroll = () => {
       const position = window.scrollY;
       setScrollPosition(position);
@@ -16,11 +20,15 @@ function Header() {
   }, []);
 
   return (
-    <header className={`h-16 z-50 animate-slide-in-top flex flex-row items-center w-screen fixed ${scrollPosition > 0 && "bg-satin-linen-200 shadow"} transition duration-500`}>
-      <h1 className="text-2xl font-display font-semibold text-center text-satin-linen-800 ml-6
-                     sm:text-3xl sm:ml-8">
+    <header className={`h-16 z-50 animate-slide-in-top flex flex-row items-center w-full fixed justify-between
+                      px-6
+                      sm:px-8
+                      ${scrollPosition > 0 && "bg-satin-linen-200 shadow"} transition duration-500`}>
+      <h1 className="text-2xl font-display font-semibold text-center text-satin-linen-800
+                     sm:text-3xl">
         Nuno Alves
       </h1>
+      <LanguageSelect />
     </header>
   );
 }
