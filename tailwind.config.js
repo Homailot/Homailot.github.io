@@ -10,7 +10,8 @@ export const theme = {
     },
     boxShadow: {
       DEFAULT: "0px 6px 24px 0px rgb(0 0 0 / 0.05)",
-      "outline": "0px 6px 24px 0px rgb(0 0 0 / 0.05), 0px 0px 0px 1px rgb(0 0 0 / 0.08) " 
+      outline:
+        "0px 6px 24px 0px rgb(0 0 0 / 0.05), 0px 0px 0px 1px rgb(0 0 0 / 0.08) ",
     },
     keyframes: {
       "slide-in-left": {
