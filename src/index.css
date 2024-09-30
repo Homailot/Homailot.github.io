@@ -5,6 +5,8 @@
 :root {
   --bg-linen-100: theme("colors.satin-linen.100");
   --bg-linen-100-0: theme("colors.satin-linen.100 / 0%");
+  --bg-comet-900: theme("colors.comet.900");
+  --bg-comet-900-0: theme("colors.comet.900 / 0%");
   --md: theme("screens.md");
 }
 
@@ -20,6 +22,16 @@ code {
     monospace;
 }
 
+.md\:bg-gradient-horizontal-edges {
+  background-color: var(--bg-linen-100);
+}
+
+@media (prefers-color-scheme: dark) {
+  .md\:bg-gradient-horizontal-edges {
+    background-color: var(--bg-comet-900);
+  }
+}
+
 @media screen and (min-width: 768px) {
   .md\:bg-gradient-horizontal-edges {
     background-image: linear-gradient(
@@ -29,5 +41,18 @@ code {
       var(--bg-linen-100) 92%,
       var(--bg-linen-100-0) 100%
     );
+  }
+}
+
+@media screen and (min-width: 768px) and (prefers-color-scheme: dark) {
+  .md\:bg-gradient-horizontal-edges {
+    background-image: linear-gradient(
+      to right,
+      var(--bg-comet-900-0) 0%,
+      var(--bg-comet-900) 8%,
+      var(--bg-comet-900) 92%,
+      var(--bg-comet-900-0) 100%
+    );
+    background-color: 0;
   }
 }

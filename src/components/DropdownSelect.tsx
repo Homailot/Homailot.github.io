@@ -39,7 +39,7 @@ export function DropdownSelect<T extends object>({
   return (
     <Select isOpen={open} onOpenChange={setOpen} {...props}>
       <Label>{label}</Label>
-      <Button className="inline-flex min-w-36 flex-row items-center rounded-md bg-satin-linen-50 px-4 py-2 font-body text-sm font-normal text-satin-linen-950 shadow-outline focus-visible:outline-none">
+      <Button className="inline-flex min-w-36 flex-row items-center rounded-md bg-satin-linen-50 dark:bg-comet-950 px-4 py-2 font-body text-sm font-normal text-satin-linen-950 dark:text-comet-50 dark:shadow-comet-100/5 shadow-outline focus-visible:outline-none">
         {icon && <span className="mr-2">{icon}</span>}
         <SelectValue className="mr-4" />
         <span aria-hidden="true" className="ml-auto">
@@ -48,7 +48,7 @@ export function DropdownSelect<T extends object>({
       </Button>
       {description && <Text slot="description">{description}</Text>}
       <FieldError>{errorMessage}</FieldError>
-      <Popover className="min-w-36 rounded-md bg-satin-linen-50 shadow-outline">
+      <Popover className="min-w-36 rounded-md bg-satin-linen-50 dark:bg-comet-950 dark:shadow-comet-100/5 shadow-outline">
         <ListBox items={items}>{children}</ListBox>
       </Popover>
     </Select>
@@ -63,7 +63,7 @@ export function DropdownSelectItem(props: DropdownSelectItemProps) {
   return (
     <ListBoxItem
       {...props}
-      className="m-1 flex items-center rounded py-2 pl-7 pr-3 font-body text-sm text-satin-linen-950 hover:bg-satin-linen-200 focus-visible:outline-none aria-selected:font-semibold"
+      className="m-1 flex items-center rounded py-2 pl-7 pr-3 font-body text-sm text-satin-linen-950 dark:text-comet-50 hover:bg-satin-linen-200 dark:hover:bg-comet-900 focus-visible:outline-none aria-selected:font-semibold"
     >
       {({ isSelected }) => (
         <>

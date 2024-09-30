@@ -19,9 +19,9 @@ function Header() {
 
   return (
     <header
-      className={`fixed z-50 flex h-16 w-full animate-slide-in-top flex-row items-center justify-between px-6 sm:px-8 ${scrollPosition > 0 && "bg-satin-linen-200 shadow"} transition duration-500`}
+      className={`fixed z-50 flex h-16 w-full animate-slide-in-top flex-row items-center justify-between px-6 sm:px-8 ${scrollPosition > 0 && "bg-satin-linen-200 dark:bg-comet-800 shadow"} transition duration-500`}
     >
-      <h1 className="text-center font-display text-2xl font-semibold text-satin-linen-800 sm:text-3xl">
+      <h1 className="text-center font-display text-2xl font-semibold text-satin-linen-800 dark:text-comet-200 sm:text-3xl">
         Nuno Alves
       </h1>
       <LanguageSelect />
