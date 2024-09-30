@@ -55,6 +55,32 @@ export function DropdownSelect<T extends object>({
   );
 }
 
+export function IconButtonDropdownSelect<T extends object>({
+  label,
+  description,
+  errorMessage,
+  children,
+  items,
+  icon,
+  ...props
+}: DropdownSelectProps<T>) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <Select isOpen={open} onOpenChange={setOpen} {...props}>
+      <Label>{label}</Label>
+      <Button className="inline-flex items-center rounded-md px-2 py-2 font-body text-2xl font-normal text-satin-linen-950 dark:text-comet-50 focus-visible:outline-none">
+        {icon}
+      </Button>
+      {description && <Text slot="description">{description}</Text>}
+      <FieldError>{errorMessage}</FieldError>
+      <Popover className="min-w-36 rounded-md bg-satin-linen-50 dark:bg-comet-950 dark:shadow-comet-100/5 shadow-outline">
+        <ListBox items={items}>{children}</ListBox>
+      </Popover>
+    </Select>
+  );
+}
+
 interface DropdownSelectItemProps extends ListBoxItemProps {
   label: string;
 }
