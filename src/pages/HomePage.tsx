@@ -5,9 +5,9 @@ function HomePage() {
   const { t } = useTranslation();
 
   return (
-    <div className="flex gap-6 lg:flex-row flex-col-reverse items-center justify-center pt-16 min-h-screen bg-satin-linen-50 overflow-hidden">
+    <div className="flex gap-4 lg:flex-row flex-col-reverse items-center justify-center pt-16 min-h-screen bg-satin-linen-50 overflow-hidden">
       <div
-        className="w-full h-auto animate-slide-in-bottom bg-satin-linen-100
+        className="h-auto animate-slide-in-bottom bg-satin-linen-100
                     md:w-[45rem] md:bg-gradient-horizontal-edges md:bg-transparent
                     lg:animate-slide-in-left"
       >
@@ -44,7 +44,7 @@ function HomePage() {
       <div className="relative w-[30rem] h-[360px] mt-8 lg:h-auto">
         <PhotoCard
           className="z-10 animate-[card-drop-1_0.6s_ease-in-out_1.1s_backwards] absolute rotate-[-5deg] left-[60px]
-                            lg:top-[-320px] lg:left-[-96px]"
+                            lg:top-[-320px] lg:left-[-66px]"
           photo="cards/card_01.jpg"
           title="A photo of me"
         />
@@ -56,7 +56,7 @@ function HomePage() {
         />
         <PhotoCard
           className="z-30 animate-[card-drop-3_0.6s_ease-in-out_2.1s_backwards] absolute rotate-[7.33deg] left-[-220px]
-                            lg:top-[-48px] lg:left-[-96px]"
+                            lg:top-[-48px] lg:left-[-66px]"
           photo="cards/card_03.jpg"
           title="A photo of me"
         />

@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { DropdownSelect } from "./DropdownSelect";
-import { ListBoxItem } from "react-aria-components";
+import { DropdownSelect, DropdownSelectItem } from "./DropdownSelect";
 import { HiLanguage } from "react-icons/hi2";
 
 export default function LanguageSelect() {
@@ -16,9 +15,9 @@ export default function LanguageSelect() {
       icon={<HiLanguage />}
       items={lngs}
       selectedKey={currentLanguage}
-      onSelectionChange={(lng) => i18n.changeLanguage(lng as string)}
+      onSelectionChange={(lng) => void i18n.changeLanguage(lng as string)}
     >
-      {({ label }) => <ListBoxItem>{label}</ListBoxItem>}
+      {({ label }) => <DropdownSelectItem className="flex" label={label} />}
     </DropdownSelect>
   );
 }
