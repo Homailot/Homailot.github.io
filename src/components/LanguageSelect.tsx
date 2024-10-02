@@ -6,7 +6,7 @@ import {
 } from "./DropdownSelect";
 import { HiLanguage } from "react-icons/hi2";
 
-export default function LanguageSelect() {
+export default function LanguageSelect({ className }: { className?: string }) {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.resolvedLanguage;
   const lngs = [
@@ -17,7 +17,7 @@ export default function LanguageSelect() {
   return (
     <>
       <TextButtonDropdownSelect
-        className="hidden md:block"
+        className={`hidden md:inline-flex ${className}`}
         icon={<HiLanguage />}
         items={lngs}
         selectedKey={currentLanguage}
@@ -26,7 +26,7 @@ export default function LanguageSelect() {
         {({ label }) => <DropdownSelectItem className="flex" label={label} />}
       </TextButtonDropdownSelect>
       <IconButtonDropdownSelect
-        className="md:hidden"
+        className={`md:hidden ${className}`}
         icon={<HiLanguage />}
         items={lngs}
         selectedKey={currentLanguage}

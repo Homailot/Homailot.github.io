@@ -42,8 +42,10 @@ export function DropdownSelect<T extends object>({
       {button}
       {description && <Text slot="description">{description}</Text>}
       <FieldError>{errorMessage}</FieldError>
-      <Popover className="min-w-36 rounded-md bg-satin-linen-50 shadow-outline dark:bg-comet-950 dark:shadow-comet-100/5">
-        <ListBox items={items}>{children}</ListBox>
+      <Popover className="min-w-36 rounded-md bg-satin-linen-50 shadow-outline focus-visible:outline-none dark:bg-comet-950 dark:shadow-comet-100/5">
+        <ListBox className="focus-visible:outline-none" items={items}>
+          {children}
+        </ListBox>
       </Popover>
     </Select>
   );
@@ -84,7 +86,7 @@ export function IconButtonDropdownSelect<T extends object>({
   ...props
 }: TextButtonDropdownSelectProps<T>) {
   const button = (
-    <Button className="inline-flex items-center rounded-md px-2 py-2 font-body text-2xl font-normal text-satin-linen-950 focus-visible:outline-none dark:text-comet-50">
+    <Button className="inline-flex items-center rounded-md px-2 py-2 font-body text-2xl font-normal text-satin-linen-900 hover:bg-satin-linen-100 focus-visible:outline-none aria-expanded:bg-satin-linen-100 aria-expanded:text-satin-linen-950 dark:text-comet-200 hover:dark:bg-comet-900 dark:aria-expanded:bg-comet-900 dark:aria-expanded:text-comet-50">
       {icon}
     </Button>
   );
@@ -96,18 +98,41 @@ interface DropdownSelectItemProps extends ListBoxItemProps {
   label: string;
 }
 
-export function DropdownSelectItem(props: DropdownSelectItemProps) {
+export function DropdownSelectItem({
+  label,
+  ...props
+}: DropdownSelectItemProps) {
   return (
     <ListBoxItem
       {...props}
-      className="m-1 flex items-center rounded py-2 pl-7 pr-3 font-body text-sm text-satin-linen-950 hover:bg-satin-linen-200 focus-visible:outline-none aria-selected:font-semibold dark:text-comet-50 dark:hover:bg-comet-900"
+      className="m-1 flex items-center rounded py-2 pl-7 pr-3 font-body text-sm text-satin-linen-900 hover:bg-satin-linen-100 focus-visible:outline-none aria-selected:bg-satin-linen-200 aria-selected:font-bold aria-selected:text-satin-linen-950 dark:text-comet-300 dark:hover:bg-comet-900 dark:aria-selected:bg-comet-800 dark:aria-selected:text-comet-100"
     >
       {({ isSelected }) => (
         <>
           {isSelected && <HiCheckCircle className="absolute left-3" />}
-          <Text slot="label">{props.label}</Text>
+          <Text slot="label">{label}</Text>
         </>
       )}
+    </ListBoxItem>
+  );
+}
+
+interface DropdownSelectIconItemProps extends DropdownSelectItemProps {
+  icon: ReactElement;
+}
+
+export function DropdownSelectIconItem({
+  icon,
+  label,
+  ...props
+}: DropdownSelectIconItemProps) {
+  return (
+    <ListBoxItem
+      {...props}
+      className="m-1 flex items-center rounded py-2 pl-9 pr-3 font-body text-sm text-satin-linen-900 hover:bg-satin-linen-100 focus-visible:outline-none aria-selected:bg-satin-linen-200 aria-selected:font-bold aria-selected:text-satin-linen-950 dark:text-comet-300 dark:hover:bg-comet-900 dark:aria-selected:bg-comet-800 dark:aria-selected:text-comet-100"
+    >
+      <span className="absolute left-3">{icon}</span>
+      <Text slot="label">{label}</Text>
     </ListBoxItem>
   );
 }

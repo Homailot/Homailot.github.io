@@ -6,7 +6,7 @@ function HomePage() {
 
   return (
     <div className="flex min-h-screen flex-col-reverse items-center justify-center gap-4 overflow-hidden bg-satin-linen-50 pt-16 lg:flex-row dark:bg-comet-950">
-      <div className="md:bg-gradient-horizontal-edges dark:md:bg-gradient-horizontal-edges h-auto w-full animate-slide-in-bottom md:w-[45rem] md:bg-transparent lg:animate-slide-in-left">
+      <div className="md:bg-gradient-horizontal-edges h-auto w-full animate-slide-in-bottom md:w-[45rem] md:bg-transparent lg:animate-slide-in-left">
         <article className="m-auto flex max-w-[38.5rem] flex-col items-start justify-center px-8 pb-8 pt-10 sm:px-12 sm:pb-12 sm:pt-12">
           <h1 className="mb-2 font-display text-3xl font-semibold text-satin-linen-800 sm:text-4xl dark:text-comet-100">
             {t("about.greeting")}

@@ -2,6 +2,7 @@
 import defaultTheme from "tailwindcss/defaultTheme";
 
 export const content = ["./src/**/*.{js,jsx,ts,tsx}"];
+export const darkMode = "selector";
 export const theme = {
   extend: {
     fontFamily: {

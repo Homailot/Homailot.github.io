@@ -19,6 +19,19 @@
     <link rel="apple-touch-icon" href="/logo192.png" />
     <link rel="manifest" href="/manifest.json" />
     <title>Nuno Alves</title>
+    <script>
+      try {
+        if (
+          localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      } catch (_) {}
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
