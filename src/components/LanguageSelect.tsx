@@ -5,6 +5,7 @@ import {
   TextButtonDropdownSelect,
 } from "./DropdownSelect";
 import { HiLanguage } from "react-icons/hi2";
+import { useEffect } from "react";
 
 export default function LanguageSelect({ className }: { className?: string }) {
   const { i18n } = useTranslation();
@@ -14,6 +15,10 @@ export default function LanguageSelect({ className }: { className?: string }) {
     { id: "pt", label: "Português" },
   ];
 
+  useEffect(() => {
+    document.documentElement.lang = currentLanguage ?? "en";
+  }, [currentLanguage]);
+
   return (
     <>
       <TextButtonDropdownSelect
@@ -21,7 +26,9 @@ export default function LanguageSelect({ className }: { className?: string }) {
         icon={<HiLanguage />}
         items={lngs}
         selectedKey={currentLanguage}
-        onSelectionChange={(lng) => void i18n.changeLanguage(lng as string)}
+        onSelectionChange={(lng) => {
+          void i18n.changeLanguage(lng as string);
+        }}
       >
         {({ label }) => <DropdownSelectItem className="flex" label={label} />}
       </TextButtonDropdownSelect>
@@ -30,7 +37,9 @@ export default function LanguageSelect({ className }: { className?: string }) {
         icon={<HiLanguage />}
         items={lngs}
         selectedKey={currentLanguage}
-        onSelectionChange={(lng) => void i18n.changeLanguage(lng as string)}
+        onSelectionChange={(lng) => {
+          void i18n.changeLanguage(lng as string);
+        }}
       >
         {({ label }) => <DropdownSelectItem className="flex" label={label} />}
       </IconButtonDropdownSelect>
