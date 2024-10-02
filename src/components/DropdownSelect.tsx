@@ -105,7 +105,7 @@ export function DropdownSelectItem({
   return (
     <ListBoxItem
       {...props}
-      className="m-1 flex items-center rounded py-2 pl-7 pr-3 font-body text-sm text-satin-linen-900 hover:bg-satin-linen-100 focus-visible:outline-none aria-selected:bg-satin-linen-200 aria-selected:font-bold aria-selected:text-satin-linen-950 dark:text-comet-300 dark:hover:bg-comet-900 dark:aria-selected:bg-comet-800 dark:aria-selected:text-comet-100"
+      className="m-1 flex items-center rounded py-2 pl-8 pr-3 font-body text-sm text-satin-linen-900 hover:bg-satin-linen-100 focus-visible:outline-none aria-selected:bg-satin-linen-200 aria-selected:font-bold aria-selected:text-satin-linen-950 dark:text-comet-300 dark:hover:bg-comet-900 dark:aria-selected:bg-comet-800 dark:aria-selected:text-comet-100"
     >
       {({ isSelected }) => (
         <>

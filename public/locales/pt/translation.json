@@ -4,5 +4,12 @@
     "part_1": "O meu nome é Nuno Alves, sou um Engenheiro de Software residente em Portugal com interesse em <strong>Desenvolvimento e Design para Web & Mobile</strong>, <strong>Computação Gráfica</strong>, <strong>Desenvolvimento de Jogos</strong> e <strong>Redes de Computadores.</strong>",
     "part_2": "Nos meus tempos livres, gosto de ouvir e descobrir música, jogar videojogos, ler manga, ver filmes e tocar bateria.",
     "part_3": "Presentemente, estou a estudar japonês devido à minha paixão por videojogos japoneses e como um desafio."
+  },
+  "settings": {
+    "theme": {
+      "light": "Claro",
+      "dark": "Escuro",
+      "system": "Sistema"
+    }
   }
 }

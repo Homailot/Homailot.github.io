@@ -5,8 +5,11 @@ import {
 } from "./DropdownSelect";
 import { HiMoon, HiSun } from "react-icons/hi2";
 import { MdMonitor } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 
 export default function ThemeSelect({ className }: { className?: string }) {
+  const { t } = useTranslation();
+
   useEffect(() => {
     const darkModePreference = window.matchMedia(
       "(prefers-color-scheme: dark)",
@@ -38,9 +41,9 @@ export default function ThemeSelect({ className }: { className?: string }) {
 
   return (
     <IconButtonDropdownSelect icon={<HiMoon />} className={className}>
-      <DropdownSelectIconItem label="Light" icon={<HiSun />} />
-      <DropdownSelectIconItem label="Dark" icon={<HiMoon />} />
-      <DropdownSelectIconItem label="System" icon={<MdMonitor />} />
+      <DropdownSelectIconItem label={t("settings.theme.light")} icon={<HiSun />} />
+      <DropdownSelectIconItem label={t("settings.theme.dark")} icon={<HiMoon />} />
+      <DropdownSelectIconItem label={t("settings.theme.system")} icon={<MdMonitor />} />
     </IconButtonDropdownSelect>
   );
 }
