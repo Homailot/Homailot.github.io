@@ -1,5 +1,9 @@
 import { useTranslation } from "react-i18next";
-import { DropdownSelect, DropdownSelectItem, IconButtonDropdownSelect } from "./DropdownSelect";
+import {
+  DropdownSelectItem,
+  IconButtonDropdownSelect,
+  TextButtonDropdownSelect,
+} from "./DropdownSelect";
 import { HiLanguage } from "react-icons/hi2";
 
 export default function LanguageSelect() {
@@ -12,7 +16,7 @@ export default function LanguageSelect() {
 
   return (
     <>
-      <DropdownSelect
+      <TextButtonDropdownSelect
         className="hidden md:block"
         icon={<HiLanguage />}
         items={lngs}
@@ -20,7 +24,7 @@ export default function LanguageSelect() {
         onSelectionChange={(lng) => void i18n.changeLanguage(lng as string)}
       >
         {({ label }) => <DropdownSelectItem className="flex" label={label} />}
-      </DropdownSelect>
+      </TextButtonDropdownSelect>
       <IconButtonDropdownSelect
         className="md:hidden"
         icon={<HiLanguage />}
@@ -31,6 +35,5 @@ export default function LanguageSelect() {
         {({ label }) => <DropdownSelectItem className="flex" label={label} />}
       </IconButtonDropdownSelect>
     </>
-
   );
 }

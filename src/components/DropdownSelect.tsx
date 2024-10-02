@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import {
   Button,
   FieldError,
@@ -21,7 +21,7 @@ interface DropdownSelectProps<T extends object>
   description?: string;
   errorMessage?: string | ((validation: ValidationResult) => string);
   items?: Iterable<T>;
-  icon?: React.ReactNode;
+  button: React.ReactNode;
   children: React.ReactNode | ((item: T) => React.ReactNode);
 }
 
@@ -31,7 +31,7 @@ export function DropdownSelect<T extends object>({
   errorMessage,
   children,
   items,
-  icon,
+  button,
   ...props
 }: DropdownSelectProps<T>) {
   const [open, setOpen] = useState(false);
@@ -39,46 +39,57 @@ export function DropdownSelect<T extends object>({
   return (
     <Select isOpen={open} onOpenChange={setOpen} {...props}>
       <Label>{label}</Label>
-      <Button className="inline-flex min-w-36 flex-row items-center rounded-md bg-satin-linen-50 dark:bg-comet-950 px-4 py-2 font-body text-sm font-normal text-satin-linen-950 dark:text-comet-50 dark:shadow-comet-100/5 shadow-outline focus-visible:outline-none">
-        {icon && <span className="mr-2">{icon}</span>}
-        <SelectValue className="mr-4" />
-        <span aria-hidden="true" className="ml-auto">
-          {open ? <HiChevronUp /> : <HiChevronDown />}
-        </span>
-      </Button>
+      {button}
       {description && <Text slot="description">{description}</Text>}
       <FieldError>{errorMessage}</FieldError>
-      <Popover className="min-w-36 rounded-md bg-satin-linen-50 dark:bg-comet-950 dark:shadow-comet-100/5 shadow-outline">
+      <Popover className="min-w-36 rounded-md bg-satin-linen-50 shadow-outline dark:bg-comet-950 dark:shadow-comet-100/5">
         <ListBox items={items}>{children}</ListBox>
       </Popover>
     </Select>
   );
 }
 
-export function IconButtonDropdownSelect<T extends object>({
-  label,
-  description,
-  errorMessage,
-  children,
-  items,
+interface TextButtonDropdownSelectProps<T extends object>
+  extends Omit<DropdownSelectProps<T>, "button"> {
+  icon?: ReactElement;
+}
+
+export function TextButtonDropdownSelect<T extends object>({
   icon,
   ...props
-}: DropdownSelectProps<T>) {
+}: TextButtonDropdownSelectProps<T>) {
   const [open, setOpen] = useState(false);
+  const button = (
+    <Button className="inline-flex min-w-36 flex-row items-center rounded-md bg-satin-linen-50 px-4 py-2 font-body text-sm font-normal text-satin-linen-950 shadow-outline focus-visible:outline-none dark:bg-comet-950 dark:text-comet-50 dark:shadow-comet-100/5">
+      {icon && <span className="mr-2">{icon}</span>}
+      <SelectValue className="mr-4" />
+      <span aria-hidden="true" className="ml-auto">
+        {open ? <HiChevronUp /> : <HiChevronDown />}
+      </span>
+    </Button>
+  );
 
   return (
-    <Select isOpen={open} onOpenChange={setOpen} {...props}>
-      <Label>{label}</Label>
-      <Button className="inline-flex items-center rounded-md px-2 py-2 font-body text-2xl font-normal text-satin-linen-950 dark:text-comet-50 focus-visible:outline-none">
-        {icon}
-      </Button>
-      {description && <Text slot="description">{description}</Text>}
-      <FieldError>{errorMessage}</FieldError>
-      <Popover className="min-w-36 rounded-md bg-satin-linen-50 dark:bg-comet-950 dark:shadow-comet-100/5 shadow-outline">
-        <ListBox items={items}>{children}</ListBox>
-      </Popover>
-    </Select>
+    <DropdownSelect
+      isOpen={open}
+      onOpenChange={setOpen}
+      button={button}
+      {...props}
+    />
   );
+}
+
+export function IconButtonDropdownSelect<T extends object>({
+  icon,
+  ...props
+}: TextButtonDropdownSelectProps<T>) {
+  const button = (
+    <Button className="inline-flex items-center rounded-md px-2 py-2 font-body text-2xl font-normal text-satin-linen-950 focus-visible:outline-none dark:text-comet-50">
+      {icon}
+    </Button>
+  );
+
+  return <DropdownSelect button={button} {...props} />;
 }
 
 interface DropdownSelectItemProps extends ListBoxItemProps {
@@ -89,7 +100,7 @@ export function DropdownSelectItem(props: DropdownSelectItemProps) {
   return (
     <ListBoxItem
       {...props}
-      className="m-1 flex items-center rounded py-2 pl-7 pr-3 font-body text-sm text-satin-linen-950 dark:text-comet-50 hover:bg-satin-linen-200 dark:hover:bg-comet-900 focus-visible:outline-none aria-selected:font-semibold"
+      className="m-1 flex items-center rounded py-2 pl-7 pr-3 font-body text-sm text-satin-linen-950 hover:bg-satin-linen-200 focus-visible:outline-none aria-selected:font-semibold dark:text-comet-50 dark:hover:bg-comet-900"
     >
       {({ isSelected }) => (
         <>
