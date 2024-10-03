@@ -7,7 +7,7 @@ interface PhotoCardProps {
 export default function PhotoCard({ photo, title, className }: PhotoCardProps) {
   return (
     <div
-      className={`padding h-[390px] w-[330px] bg-white p-[15px] shadow dark:bg-comet-950 dark:shadow-comet-100/5 ${className}`}
+      className={`h-[390px] w-[330px] bg-white p-[15px] shadow dark:bg-comet-950 dark:shadow-comet-100/5 ${className}`}
     >
       <img
         src={photo}
